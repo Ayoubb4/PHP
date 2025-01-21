@@ -25,7 +25,7 @@ if($conexion -> query ($sql ===TRUE)){
 
 /* PDO */
 try{
-    $stnt = $conexion -> prepare($sql);
+    $stmt = $conexion -> prepare($sql);
     $stmt -> execute();
     echo $stnt -> rowCount() . "registro modificadfo";
     

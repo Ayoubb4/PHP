@@ -112,24 +112,35 @@
         }
     
     /* PDO */
-        try {
-
-            $sql_check = "SHOW SCHEMA_NAME FROM INFORMATION_SCHEMA.SCHEMATA WHERE SCHEMA_NAME = baseDatos";
-            $resultado = $conexion->query($sql_check);
+        $servidor = "localhost";
+        $usuario = "root";
+        $contraseña = "";
+        $base_datos = "biblioteca";  // Nombre de la base de datos a eliminar
         
-            if ($resultado->num_rows > 0) {
-        
-                $sql = "DROP DATABASE baseDatos";
-        
-                $conexion->exec($sql);
-            } else {
-        
-                echo "Base de datos no encontrada";
-            }
-        } catch (\PDOException $e) {
-        
-            echo "Error" . $e->getMessage();
+    try {
+        // Conectar al servidor de base de datos sin especificar una base de datos
+        $conexion = new PDO("mysql:host=$servidor", $usuario, $contraseña);
+        $conexion->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+    
+        // Verificar si la base de datos existe
+        $sql_check = "SHOW SCHEMA_NAME FROM INFORMATION_SCHEMA.SCHEMATA WHERE SCHEMA_NAME = baseDatos";
+        $resultado = $conexion->prepare($sql_check);
+        $resultado->execute();
+    
+        if ($resultado->rowCount() > 0) {
+            // Si la base de datos existe, eliminarla
+            $sql = "DROP DATABASE $base_datos";
+            $conexion->exec($sql);
+            echo "Base de datos '$base_datos' eliminada correctamente.<br>";
+        } else {
+            echo "Base de datos no encontrada.<br>";
         }
+    
+    } catch (PDOException $e) {
+        echo "Error: " . $e->getMessage();
+    }
+    
+    $conexion = null;
 
 
 
