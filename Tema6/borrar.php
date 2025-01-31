@@ -95,7 +95,7 @@
         }
 
     /* Orientada a objetos */
-        $sql_check = "SHOW SCHEMA_NAME FROM INFORMATION_SCHEMA.SCHEMATA WHERE SCHEMA_NAME = baseDatos";
+        $sql_check = "SELECT SCHEMA_NAME FROM INFORMATION_SCHEMA.SCHEMATA WHERE SCHEMA_NAME = baseDatos";
         $resultado = $conexion->query($sql_check);
         
         if ($resultado->num_rows > 0) {
@@ -123,7 +123,7 @@
         $conexion->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
     
         // Verificar si la base de datos existe
-        $sql_check = "SHOW SCHEMA_NAME FROM INFORMATION_SCHEMA.SCHEMATA WHERE SCHEMA_NAME = baseDatos";
+        $sql_check = "SELECT SCHEMA_NAME FROM INFORMATION_SCHEMA.SCHEMATA WHERE SCHEMA_NAME = baseDatos";
         $resultado = $conexion->prepare($sql_check);
         $resultado->execute();
     

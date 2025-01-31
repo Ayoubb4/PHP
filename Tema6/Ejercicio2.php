@@ -41,7 +41,7 @@ $sql = "CREATE TABLE IF NOT EXISTS pacientes (
 if(mysqli_query($conexion,$sql)){
     echo "Tabla creada <br>";
 }else{
-    echo "Error rabla no creada". mysqli_error($conn);
+    echo "Error rabla no creada". mysqli_error($conexion);
 }
 
 $sql = "INSERT INTO pacientes (nombre,diagnostico,fecha_ingreso) VALUES ('Miguel', 'Lesion', '2024-02-25'),
