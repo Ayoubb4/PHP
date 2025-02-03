@@ -36,7 +36,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     
     if (isset($_POST['nombre'], $_POST['email'], $_POST['telefono'])) {
         $sql = "INSERT INTO clientes (nombre, email, telefono) VALUES (:nombre, :email, :telefono)";
-        $stmt = $pdo->prepare($sql);
+        $stmt = $conexion->prepare($sql);
         $stmt->bindParam(':nombre', $_POST['nombre']);
         $stmt->bindParam(':email', $_POST['email']);
         $stmt->bindParam(':telefono', $_POST['telefono']);
