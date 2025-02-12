@@ -7,13 +7,11 @@ if($_SERVER['REQUEST_METHOD'] === 'GET'){
 
     $sql = "SELECT * FROM alumnos";
     $resultado = mysqli_query($conexion,$sql);
-    if(mysqli_query($conexion,$sql)){
         if(mysqli_num_rows($resultado) > 0){
             while($fila = mysqli_fetch_assoc($resultado)){
                 echo "Id: {$fila['id']}, Nombre: {$fila['nombre']}, Nota: {$fila['nota']}, Asignatura: {$fila['asignatura']} <br>";
             }
         }
-    }
 }
 
 

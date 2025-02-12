@@ -2,7 +2,7 @@
 include 'instituto.php';
     
 if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['_method']) && $_POST['_method'] === 'DELETE') {
-    parse_str(file_get_contents("php://input"), $DELETE);
+    parse_str(file_get_contents("php://input"), $_DELETE);
 
 
     $id = $_DELETE['id'];

@@ -29,7 +29,7 @@ try {
         if($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['_method']) && $_POST['_method'] === 'PUT'){
             parse_str(file_get_contents("php://input"), $_PUT);
 
-    
+
             if (isset($_PUT['id'], $_PUT['nombre'], $_PUT['email'], $_PUT['telefono'])) {
                 $sql = "UPDATE clientes SET nombre = :nombre, email = :email, telefono = :telefono WHERE id = :id";
                 $stmt = $conexion->prepare($sql);
