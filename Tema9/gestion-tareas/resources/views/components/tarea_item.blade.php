@@ -3,9 +3,12 @@
     <p>{{ $title }}</p>
     <p>{{ $description }}</p>
     <p><strong>Estado:</strong>{{ $completed ? 'Completada' : 'Pendiente' }}</p>
+    <div>
+        {{ $slot }}
+    </div>
 </div>
 
-<!-- @if ($completada) 
+<!-- @if ($completed) 
     'Completada'
     @else
     'Pendiente'
