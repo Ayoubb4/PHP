@@ -11,7 +11,7 @@ class tareaController extends Controller
     /*  */
     public function index(){
         $tareas = Tarea::all();
-        return view('tareas.index', compact('tareas'));
+        return view('tareas.index', ['tareas' => $tareas]);
     }
     
 
@@ -41,11 +41,7 @@ class tareaController extends Controller
 
 
     public function completar($id){
-        $tarea = Tarea::find($id);
-        $tarea->completed = true;
-        $tarea->save();
-    
-        return redirect()->route('tareas.index')->with('success', 'Tarea completada correctamente.');
+        
     }
     
 }

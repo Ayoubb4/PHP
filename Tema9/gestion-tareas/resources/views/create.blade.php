@@ -9,7 +9,8 @@
     <h1>Gestion Tareas Formulario</h1>
 
     <form action="{{ route('tareas.store') }}" method="post">
-        <input type="hidden" name="_token" value="{{ csrf_token() }}">
+        @csrf
+
         <label for="title">Titulo</label>
         <input type="text" name="title" id="title" placeholder="titulo">
 

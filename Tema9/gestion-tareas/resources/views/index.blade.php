@@ -8,7 +8,7 @@
 <body>
     <h1>Gestion Tareas</h1>
 
-    <x-tarea_item :title="$tareas->title" :description="$tareas->description" :completed="$tareas->completed" />
+
     
 </body>
 </html>
