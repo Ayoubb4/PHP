@@ -11,7 +11,7 @@ class formularioController extends Controller
     }
     public function procesarFormulario(Request $request){
         $request->validate([
-            'nombre'=>'required| min 3',
+            'nombre'=>'required| min :3',
             'email'=>'required|email']);
         return 'Formulario enviado';
     }
