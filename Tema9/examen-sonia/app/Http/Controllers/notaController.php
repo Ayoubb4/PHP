@@ -9,7 +9,7 @@ class NotaController extends Controller
 {
     public function index()
     {
-        $notas = Nota::orderBy('created_at', 'desc')->get();
+        $notas = Nota::orderBy('nota', 'desc')->get();
         return view('notas.index', compact('notas'));
     }
 
@@ -20,7 +20,7 @@ class NotaController extends Controller
 
     public function store(Request $request)
     {
-        $estado = $request->nota > 5 ? 'Apto' : 'No Apto';
+        $estado = $request->nota >= 5 ? 'Apto' : 'No Apto';
     
         Nota::create([
             'nombre' => $request->nombre,
@@ -41,9 +41,8 @@ class NotaController extends Controller
     public function delete($id)
     {
         $nota = Nota::find($id);
-        if ($nota) {
             $nota->delete();
-        }
+            
         return redirect()->route('notas.index');
     }
 }

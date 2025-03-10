@@ -10,20 +10,26 @@
     <h1>Lista de Notas</h1>
     
     <a href="{{ route('notas.create') }}">Agregar Nueva Nota</a>
+    
     @if($notas->isEmpty())
-        <p>No hay notas registradas.</p>
+        <x-mensaje-advertencia>
+            <p>No hay notas registradas</p>
+        </x-mensaje-advertencia>
     @else
+
         @foreach($notas as $nota)
+        <hr>
             <x-nota-item :nombre="$nota->nombre" :asignatura="$nota->asignatura" :nota="$nota->nota" :estado="$nota->estado">
-                <a href="{{ route('notas.show', ['id' => $nota->id]) }}">Ver Detalles</a>
+                <a href="{{ route('notas.show', $nota->id) }}">Ver Detalles</a>
                 
-                <form action="{{ route('notas.delete', ['id' => $nota->id]) }}" method="POST">
+                <form action="{{ route('notas.delete', $nota->id) }}" method="POST">
                     @csrf
                     @method('DELETE')
                     <button>Eliminar</button>
                 </form>
             </x-nota-item>
-        @endforeach
+            <hr>
+        @endforeach 
     @endif
 </body>
 </html>
