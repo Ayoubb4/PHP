@@ -20,15 +20,13 @@ class NotaController extends Controller
 
     public function store(Request $request)
     {
-        // Calcular el estado según la nota
         $estado = $request->nota > 5 ? 'Apto' : 'No Apto';
     
-        // Crear la nueva nota con el estado calculado
         Nota::create([
             'nombre' => $request->nombre,
             'asignatura' => $request->asignatura,
             'nota' => $request->nota,
-            'estado' => $estado,  // Aquí se asigna "Apto" o "No Apto"
+            'estado' => $estado,  
         ]);
     
         return redirect()->route('notas.index');
