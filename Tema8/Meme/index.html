@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Memes</title>
+</head>
+<body>
+    <h2>Sube tu imagen y crea un meme</h2>
+    <form action="meme.php" method="post" enctype="multipart/form-data">
+        <label for="imagen">Selecciona una imagen:</label>
+        <input type="file" name="imagen" required><br><br>
+
+        <label for="textoArriba">Texto arriba:</label>
+        <input type="text" name="texto_superior" required><br><br>
+
+        <label for="textoAbajo">Texto abajo:</label>
+        <input type="text" name="texto_inferior" required><br><br>
+
+        <button type="submit">Generar Meme</button>
+    </form>
+</body>
+</html>

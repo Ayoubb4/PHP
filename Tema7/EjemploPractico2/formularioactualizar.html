@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario PUT</title>
+</head>
+
+<body>
+    <h1>Actualizar</h1>
+
+    <form method="post" action="putproductos.php">
+        <input type="hidden" name="_method" value="PUT"><!-- Esto indica que el valor POST se transforme en PUT -->
+
+        <label for="id">Id:</label>
+        <input type="text" id="id" name="id" required>
+
+        <label for="nombre">Nombre:</label>
+        <input type="text" id="nombre" name="nombre" required>
+
+        <label for="precio">precio:</label>
+        <input type="precio" id="precio" name="precio" required>
+
+        <label for="descripcion">descripcion:</label>
+        <input type="descripcion" id="descripcion" name="descripcion" required>
+
+        <button type="submit">Enviar</button>
+    </form>
+</body>
+
+</html>

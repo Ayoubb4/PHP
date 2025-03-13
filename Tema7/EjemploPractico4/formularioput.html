@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario Actualizar</title>
+</head>
+<body>
+    <h1>Actualizar Datos</h1>
+    <form action="put.php" method="POST">
+        <input type="hidden" name="_method" value="PUT">
+
+        <label for="id">id</label>
+        <input type="number" name="id" id="id">
+        
+        <label for="nombre">Nombre</label>
+        <input type="text" name="nombre" id="nombre">
+
+        <label for="email">email</label>
+        <input type="text" name="email" id="email">
+
+        <label for="telefono">telefono</label>
+        <input type="number" name="telefono" id="telefono">
+
+        <button type="submit">Enviar</button>
+    </form>
+</body>
+</html>
