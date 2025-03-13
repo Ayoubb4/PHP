@@ -6,11 +6,10 @@
     <title>Document</title>
 </head>
 <body>
-    <h2>Detalles de la Nota</h2>
+    <h1>Detalles de Nota</h1>
 
     <x-nota-item :nombre="$nota->nombre" :asignatura="$nota->asignatura" :nota="$nota->nota" :estado="$nota->estado">
-        <a href="{{ route('notas.index') }}">Volver a la lista de Notas</a>
-
+        <a href=" {{ route('notas.index') }} ">Volver al listado de Notas</a>
     </x-nota-item>
 </body>
 </html>

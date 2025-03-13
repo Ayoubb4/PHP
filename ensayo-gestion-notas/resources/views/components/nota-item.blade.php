@@ -3,12 +3,12 @@
 
     <div class = "nota-item">
     <h2>Nombre: {{ $nombre }}</h2>
-    <p><strong>Asignatura:</strong> {{$asignatura}} </p>
-    <p><strong>Nota:</strong> {{$nota}} </p>
-    <p><strong>Estado:</strong>{{$estado}} </p>
+    <p><strong>Asignatura:</strong> {{ $asignatura }} </p>
+    <p><strong>Nota:</strong> {{ $nota }} </p>
+    <p><strong>Estado:</strong>{{ $estado }} </p>
 
     <div>
-        {{$slot}}
+        {{ $slot }}
     </div>
 
     </div>

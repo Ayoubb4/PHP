@@ -1,0 +1,12 @@
+<?php
+
+namespace App\Models;
+
+use Illuminate\Database\Eloquent\Model;
+
+class Nota extends Model
+{
+    protected $table = 'notascasa';
+    
+    protected $fillable=['nombre', 'asignatura', 'nota', 'estado'];
+}
